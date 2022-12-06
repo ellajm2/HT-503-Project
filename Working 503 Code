@@ -1,0 +1,24 @@
+import tkinter as tk
+from tkinter import *
+from tkinter.font import Font
+window = tk.Tk()
+window.geometry("700x400") # Size of the window
+window['bg'] = 'light grey'
+
+
+
+label = tk.Label(window, text="Enter BPM:", font=('Georgia', 40), bg='light grey', foreground= 'dark blue')
+label.grid(padx=85, pady=10, column=1)
+
+sv = StringVar() #string variable 
+sb = Spinbox(window,textvariable=sv, width=5,from_=0,to=120, foreground= 'dark blue', font=Font(family='Helvetica', size=50))
+sb.grid(row=1,column=1,padx=20,pady=10)
+
+sc=tk.Scale(window, from_=0, to=120, orient='horizontal',length=400, width=100, bg='light grey', foreground= 'dark blue', variable= sv)
+sc.grid(row=2, column=1,padx=10, pady=6)
+window.title("Flow Controller")
+
+
+
+window.mainloop() # Keep the window open
+
