@@ -1,0 +1,30 @@
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(3, GPIO.OUT)
+GPIO.setup(5, GPIO.OUT)
+GPIO.setup(7, GPIO.OUT)
+
+p=GPIO.PWM(7, 100)
+p.start(0)
+
+GPIO.output(3, True)
+GPIO.output(5, False)
+p.ChangeDutyCycle(25)
+GPIO.output(7, True)
+sleep(1)
+GPIO.output(3, True)
+GPIO.output(5, False)
+p.ChangeDutyCycle(25)
+GPIO.output(7, True)
+sleep(1)
+
+##### Do i need this next part
+try:
+        while True:
+                p.start(25)
+ 
+except KeyboardInterrupt:
+        p.stop()
+        GPIO.cleanup()
