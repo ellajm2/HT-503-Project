@@ -18,8 +18,9 @@ sc=tk.Scale(window, from_=40, to=180, orient='horizontal',length=450, width=100,
 sc.grid(row=2, column=4,padx=10, pady=9)
 window.title("Flow Controller")
 
-b = tk.Button(window, font = ('Helvetica', 11, 'bold'), background='green', text = "TURN VEIN FLOW ON", foreground= 'green', height=3, highlightcolor='dark green', borderwidth=7)
-b.place(x=30, y=100)
+b = tk.Button(window, font = ('Helvetica', 27, 'bold'), background='green', text = "ON", foreground= 'green', height=2, highlightcolor='dark green', borderwidth=7)
+b.place(x=75, y=95)
 
 
 window.mainloop() # Keep the window open
+
